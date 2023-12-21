@@ -5,13 +5,12 @@
 //  Created by Sejal.Sethiya on 21/12/23.
 //
 
-import Foundation
 import UIKit
 
 class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     var interactionInProgress = false
 
-    func handlePanGesture(gesture: UIPanGestureRecognizer) {
+    @objc dynamic func handlePanGesture(gesture: UIPanGestureRecognizer) {
         guard let view = gesture.view else { return }
         
         let translation = gesture.translation(in: view)
