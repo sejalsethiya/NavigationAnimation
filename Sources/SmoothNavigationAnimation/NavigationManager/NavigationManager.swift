@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 public class NavigationManager { 
-    static let shared = NavigationManager()
+    public static let shared = NavigationManager()
 
     // MARK: - Custom Transition
     
-    func presentWithCustomTransition(viewControllerToPresent: UIViewController) {
+    public func presentWithCustomTransition(viewControllerToPresent: UIViewController) {
         let customTransition = CustomTransition()
         viewControllerToPresent.modalPresentationStyle = .custom
         viewControllerToPresent.transitioningDelegate = customTransition
@@ -22,7 +22,7 @@ public class NavigationManager {
     
     // MARK: - Interactive Transition
     
-    func enableInteractiveTransition(viewControllerToDismiss: UIViewController) {
+    public func enableInteractiveTransition(viewControllerToDismiss: UIViewController) {
         let interactiveTransition = InteractiveTransition()
         let panGesture = UIPanGestureRecognizer(target: interactiveTransition, action: #selector(interactiveTransition.handlePanGesture))
         viewControllerToDismiss.view.addGestureRecognizer(panGesture)
@@ -30,14 +30,14 @@ public class NavigationManager {
     
     // MARK: - Drawer Navigation
     
-    func presentDrawer(viewControllerToPresent: UIViewController) {
+    public func presentDrawer(viewControllerToPresent: UIViewController) {
         viewControllerToPresent.modalPresentationStyle = .overCurrentContext
         topViewController()?.present(viewControllerToPresent, animated: true, completion: nil)
     }
     
     // MARK: - Page Curl Transition
     
-    func presentWithPageCurlTransition(viewControllerToPresent: UIViewController) {
+    public func presentWithPageCurlTransition(viewControllerToPresent: UIViewController) {
         let pageCurlTransition = PageCurlTransition()
         viewControllerToPresent.modalPresentationStyle = .custom
         viewControllerToPresent.transitioningDelegate = pageCurlTransition
