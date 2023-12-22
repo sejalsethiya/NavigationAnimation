@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class CustomTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+public class CustomTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         // Implement your custom transition animation logic here
         guard let toViewController = transitionContext.viewController(forKey: .to) else { return }
 
@@ -25,7 +25,7 @@ class CustomTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewC
         }
     }
 
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5 // Set the duration for the transition
     }
 }
