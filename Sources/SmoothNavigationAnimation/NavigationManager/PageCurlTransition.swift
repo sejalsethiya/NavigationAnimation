@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class PageCurlTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+public class PageCurlTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         // Implement your page curl transition animation logic here
         guard let toViewController = transitionContext.viewController(forKey: .to) else { return }
 
@@ -25,7 +25,7 @@ class PageCurlTransition: NSObject, UIViewControllerTransitioningDelegate, UIVie
         }
     }
 
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.8 // Set the duration for the transition
     }
 }
