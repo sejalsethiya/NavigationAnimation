@@ -10,7 +10,7 @@ import UIKit
 public class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     public var interactionInProgress = false
 
-    @objc dynamic func handlePanGesture(gesture: UIPanGestureRecognizer) {
+    @objc public dynamic func handlePanGesture(gesture: UIPanGestureRecognizer) {
         guard let view = gesture.view else { return }
         
         let translation = gesture.translation(in: view)
