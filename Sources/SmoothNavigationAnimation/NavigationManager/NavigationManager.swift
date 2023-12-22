@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class NavigationManager { 
+public class NavigationManager { 
     static let shared = NavigationManager()
 
     // MARK: - Custom Transition
